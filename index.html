@@ -3,6 +3,10 @@
 
 <head>
     <style>
+        body {
+            width: auto;
+        }
+        
         .container {
             margin: auto;
             width: 400px;
@@ -56,9 +60,25 @@
             margin: 0;
         }
         
-        @media only screen and (max-width: 600px) {
+        h1 {
+            color: #111;
+            font-family: 'Helvetica Neue', sans-serif;
+            font-size: 55px;
+            font-weight: bold;
+            text-align: start;
+            letter-spacing: -1px;
+            line-height: 1;
+        }
+        
+        @media only screen and (min-width: 600px) {
+            body {
+                width: auto;
+            }
+            .container {
+                width: 80vw;
+            }
             .coins {
-                width: 500px;
+                width: 80vw;
             }
         }
     </style>
@@ -66,6 +86,7 @@
 
 <body>
     <div class="container">
+        <h1>YIKIKLAR A.Ş</h1>
         <div class="wallet">
             <div class="coin-line">
                 <div class="coin-title">
