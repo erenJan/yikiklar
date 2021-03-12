@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        .container {
+            margin: auto;
+            width: 400px;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+        }
+        
+        .wallet {}
+        
+        .coin-line {
+            margin: 3px;
+            padding: 10px;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.75);
+        }
+        
+        .coin-title {
+            display: flex;
+            flex-direction: row;
+            vertical-align: middle;
+        }
+        
+        .coin-image img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            padding-right: 10px;
+        }
+        
+        .coins {
+            width: 375px;
+            margin: auto;
+        }
+        
+        .price {
+            display: flex;
+            flex-direction: row;
+        }
+        
+        p {
+            margin: 0;
+            padding: 0;
+        }
+        
+        h3 {
+            padding: 0;
+            margin: 0;
+        }
+        
+        @media only screen and (max-width: 600px) {
+            .coins {
+                width: 500px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="wallet">
+            <div class="coin-line">
+                <div class="coin-title">
+                    <div class="coin-image">
+                        <img src="https://cryptologos.cc/logos/chiliz-chz-logo.png">
+                    </div>
+                    <div class="coin-name">
+                        <h4>CHZ</h4>
+                    </div>
+                </div>
+                <div style="padding-right: 10px;">
+                    <div class="amount" style="text-align: end;float:float-right;margin: 0;padding-top: 10px;padding-left: 10px;">
+                        <h3 id="amount-chz">40</h3>
+                    </div>
+                    <div class="price" style="margin: 0;padding-top: 5px;">
+                        <pre style="padding: 0;margin: 0;">₺</pre>
+                        <p id="chz-price">245</p>
+                    </div>
+                </div>
+            </div>
+            <div class="coin-line">
+                <div class="coin-title">
+                    <div class="coin-image">
+                        <img src="https://cryptologos.cc/logos/loom-network-loom-logo.png">
+                    </div>
+                    <div class="coin-name">
+                        <h4>LOOM</h4>
+                    </div>
+                </div>
+                <div style="padding-right: 10px;">
+                    <div class="amount" style="text-align: end;float:float-right;margin: 0;padding-top: 10px;padding-left: 10px;">
+                        <h3 id="amount-loom">97</h3>
+                    </div>
+                    <div class="price" style="margin: 0;padding-top: 5px;">
+                        <pre style="padding: 0;margin: 0;">₺</pre>
+                        <p id="loom-price">97</p>
+                    </div>
+                </div>
+            </div>
+            <div class="coin-line">
+                <div class="coin-title">
+                    <div class="coin-image">
+                        <img src="https://cryptologos.cc/logos/pundi-x-npxs-logo.png">
+                    </div>
+                    <div class="coin-name">
+                        <h4>NPXS</h4>
+                    </div>
+                </div>
+                <div style="padding-right: 10px;">
+                    <div class="amount" style="text-align: end;float:float-right;margin: 0;padding-top: 10px;padding-left: 10px;">
+                        <h3 id="amount-npxs">5846</h3>
+                    </div>
+                    <div class="price" style="margin: 0;padding-top: 5px;">
+                        <pre style="padding: 0;margin: 0;">₺</pre>
+                        <p id="npxs-price">245</p>
+                    </div>
+                </div>
+            </div>
+            <div class="coin-line">
+                <div class="coin-title">
+                    <div class="coin-image">
+                        <img src="https://cryptologos.cc/logos/bittorrent-btt-logo.png">
+                    </div>
+                    <div class="coin-name">
+                        <h4>BTT</h4>
+                    </div>
+                </div>
+                <div style="padding-right: 10px;">
+                    <div class="amount" style="text-align: end;float:float-right;margin: 0;padding-top: 10px;padding-left: 10px;">
+                        <h3 id="amount-btt">9825</h3>
+                    </div>
+                    <div class="price" style="margin: 0;padding-top: 5px;">
+                        <pre style="padding: 0;margin: 0;">₺</pre>
+                        <p id="btt-price">245</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="coins">
+            <div class="coinmarketcap-currency-widget" data-currencyid="4066" data-base="TRY" data-secondary="" data-ticker="true" data-rank="true" data-marketcap="true" data-volume="true" data-statsticker="true" data-stats="USD"></div>
+            <div class="coinmarketcap-currency-widget" data-currencyid="3718" data-base="TRY" data-secondary="" data-ticker="true" data-rank="true" data-marketcap="true" data-volume="true" data-statsticker="true" data-stats="USD"></div>
+            <div class="coinmarketcap-currency-widget" data-currencyid="2588" data-base="TRY" data-secondary="" data-ticker="true" data-rank="true" data-marketcap="true" data-volume="true" data-statsticker="true" data-stats="USD"></div>
+            <div class="coinmarketcap-currency-widget" data-currencyid="2603" data-base="TRY" data-secondary="" data-ticker="true" data-rank="true" data-marketcap="true" data-volume="true" data-statsticker="true" data-stats="USD"></div>
+        </div>
+    </div>
+    <script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/currency.js"></script>
+    <script>
+        var url = "https://api.coingecko.com/api/v3/simple/price?ids=chiliz%2Cbittorrent%2Cloom-network%2Cpundi-x&vs_currencies=try"
+        var xmlhttp = new XMLHttpRequest();
+
+        var chz = 3
+        var loom = 1
+        var btt = 0.01
+        var npxs = 0.01
+
+        var amount_chz = document.getElementById("amount-chz").innerText
+        var amount_loom = document.getElementById("amount-loom").innerText
+        var amount_btt = document.getElementById("amount-btt").innerText
+        var amount_npxs = document.getElementById("amount-npxs").innerText
+
+        xmlhttp.onreadystatechange = function() {
+            var myArr = JSON.parse(this.responseText);
+            console.log(myArr);
+            try {
+                chz = myArr["chiliz"]["try"]
+                loom = myArr["loom-network"]["try"]
+                npxs = myArr["pundi-x"]["try"]
+            } catch (err) {
+                console.log(err)
+            }
+            var chz_price = chz * amount_chz
+            var loom_price = loom * amount_loom
+            var btt_price = btt * amount_btt
+            var npxs_price = npxs * amount_npxs
+
+            document.getElementById("chz-price").innerHTML = chz_price.toFixed(2);
+            document.getElementById("loom-price").innerHTML = loom_price.toFixed(2);
+            document.getElementById("btt-price").innerHTML = btt_price.toFixed(2);
+            document.getElementById("npxs-price").innerHTML = npxs_price.toFixed(2);
+        }
+
+        xmlhttp.open("GET", url, true);
+        xmlhttp.send();
+    </script>
+</body>
+
+</html>
