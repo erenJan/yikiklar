@@ -175,7 +175,7 @@
     </div>
     <script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/currency.js"></script>
     <script>
-        var url = "https://api.coingecko.com/api/v3/simple/price?ids=chiliz%2Cbittorrent%2Cloom-network%2Cpundi-x&vs_currencies=try"
+        var url = "https://api.coingecko.com/api/v3/simple/price?ids=chiliz%2Cbittorrent%2Cbittorrent-2%2Cloom-network%2Cpundi-x&vs_currencies=try"
         var xmlhttp = new XMLHttpRequest();
 
         var chz = 3
@@ -195,6 +195,7 @@
                 chz = myArr["chiliz"]["try"]
                 loom = myArr["loom-network"]["try"]
                 npxs = myArr["pundi-x"]["try"]
+                btt = myArr["bittorrent-2"]["try"]
             } catch (err) {
                 console.log(err)
             }
@@ -207,6 +208,7 @@
             document.getElementById("loom-price").innerHTML = loom_price.toFixed(2);
             document.getElementById("btt-price").innerHTML = btt_price.toFixed(2);
             document.getElementById("npxs-price").innerHTML = npxs_price.toFixed(2);
+            document.getElementById("btt-price").innerHTML = btt_price.toFixed(2);
         }
 
         xmlhttp.open("GET", url, true);
