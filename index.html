@@ -2,20 +2,29 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/coinMarquee.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed&family=IBM+Plex+Sans:wght@700&display=swap" rel="stylesheet">
+    <title>Document</title>
     <style>
         body {
             width: auto;
         }
         
         .container {
+            background-color: #FAFAFA;
             margin: auto;
-            width: 400px;
+            width: 60vw;
             padding: 20px;
+            overflow: hidden;
             border-radius: 20px;
             box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
         }
-        
-        .wallet {}
         
         .coin-line {
             margin: 3px;
@@ -70,230 +79,268 @@
             line-height: 1;
         }
         
-        @media only screen and (min-width: 600px) {
+        #pie-chart {
+            width: 400px;
+            height: 250px;
+            position: relative;
+            margin-left: 10px;
+            margin-bottom: 40px;
+            padding-top: 40px;
+        }
+        
+        #pie-chart::before {
+            content: "";
+            position: absolute;
+            display: block;
+            width: 120px;
+            height: 115px;
+            left: 315px;
+            top: 0;
+        }
+        
+        #pie-chart::after {
+            content: "";
+            position: absolute;
+            display: block;
+            top: 260px;
+            left: 70px;
+            width: 170px;
+            height: 2px;
+        }
+        
+        .entry {
+            display: flex;
+            flex-direction: row;
+        }
+        
+        @media only screen and (max-width: 600px) {
             body {
                 width: auto;
             }
             .container {
-                width: 80vw;
-            }
-            .coins {
+                margin: auto;
                 width: 80vw;
             }
         }
     </style>
+
 </head>
 
 <body>
-    <div class="container">
-        <h1>YIKIKLAR A.Ş</h1>
-        <div class="wallet">
-            <div class="coin-line">
-                <div class="coin-title">
-                    <div class="coin-image">
-                        <img src="https://cryptologos.cc/logos/chiliz-chz-logo.png">
+
+    <body>
+        <div class="container">
+            <h1>YIKIKLAR A.Ş</h1>
+            <p style="font-family: 'IBM Plex Sans', sans-serif;color: rgb(71, 77, 87);opacity: 0.9;">Total Value of Assets</p>
+            <pre style="display: flex;margin: 0px;font-size: 20px;color: rgb(30, 35, 41);">≈ ₺<p id="subTotal" style="color: rgb(71, 77, 87);">dsas</p></pre>
+            <div id="pie-chart"></div>
+            <div class="wallet">
+                <div class="coin-line">
+                    <div class="coin-title">
+                        <div class="coin-image">
+                            <img src="https://cryptologos.cc/logos/chiliz-chz-logo.png">
+                        </div>
+                        <div class="coin-name">
+                            <h4>CHZ</h4>
+                        </div>
                     </div>
-                    <div class="coin-name">
-                        <h4>CHZ</h4>
+                    <div style="padding-right: 10px;">
+                        <div class="amount" style="text-align: end;float:float-right;margin: 0;padding-top: 10px;padding-left: 10px;">
+                            <h3 id="amount-chz">40</h3>
+                        </div>
+                        <div class="price" style="margin: 0;padding-top: 5px;">
+                            <pre style="padding: 0;margin: 0;">₺</pre>
+                            <p id="chz-price">245</p>
+                        </div>
                     </div>
                 </div>
-                <div style="padding-right: 10px;">
-                    <div class="amount" style="text-align: end;float:float-right;margin: 0;padding-top: 10px;padding-left: 10px;">
-                        <h3 id="amount-chz">40</h3>
+                <div class="coin-line">
+                    <div class="coin-title">
+                        <div class="coin-image">
+                            <img src="https://cryptologos.cc/logos/loom-network-loom-logo.png">
+                        </div>
+                        <div class="coin-name">
+                            <h4>LOOM</h4>
+                        </div>
                     </div>
-                    <div class="price" style="margin: 0;padding-top: 5px;">
-                        <pre style="padding: 0;margin: 0;">₺</pre>
-                        <p id="chz-price">245</p>
+                    <div style="padding-right: 10px;">
+                        <div class="amount" style="text-align: end;float:float-right;margin: 0;padding-top: 10px;padding-left: 10px;">
+                            <h3 id="amount-loom">97</h3>
+                        </div>
+                        <div class="price" style="margin: 0;padding-top: 5px;">
+                            <pre style="padding: 0;margin: 0;">₺</pre>
+                            <p id="loom-price">97</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="coin-line">
+                    <div class="coin-title">
+                        <div class="coin-image">
+                            <img src="https://cryptologos.cc/logos/pundi-x-npxs-logo.png">
+                        </div>
+                        <div class="coin-name">
+                            <h4>NPXS</h4>
+                        </div>
+                    </div>
+                    <div style="padding-right: 10px;">
+                        <div class="amount" style="text-align: end;float:float-right;margin: 0;padding-top: 10px;padding-left: 10px;">
+                            <h3 id="amount-npxs">3</h3>
+                        </div>
+                        <div class="price" style="margin: 0;padding-top: 5px;">
+                            <pre style="padding: 0;margin: 0;">₺</pre>
+                            <p id="npxs-price">245</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="coin-line">
+                    <div class="coin-title">
+                        <div class="coin-image">
+                            <img src="https://cryptologos.cc/logos/bittorrent-btt-logo.png">
+                        </div>
+                        <div class="coin-name">
+                            <h4>BTT</h4>
+                        </div>
+                    </div>
+                    <div style="padding-right: 10px;">
+                        <div class="amount" style="text-align: end;float:float-right;margin: 0;padding-top: 10px;padding-left: 10px;">
+                            <h3 id="amount-btt">9825</h3>
+                        </div>
+                        <div class="price" style="margin: 0;padding-top: 5px;">
+                            <pre style="padding: 0;margin: 0;">₺</pre>
+                            <p id="btt-price">245</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="coin-line">
+                    <div class="coin-title">
+                        <div class="coin-image">
+                            <img src="https://s2.coinmarketcap.com/static/img/coins/200x200/5893.png">
+                        </div>
+                        <div class="coin-name">
+                            <h4>FRONT</h4>
+                        </div>
+                    </div>
+                    <div style="padding-right: 10px;">
+                        <div class="amount" style="text-align: end;float:float-right;margin: 0;padding-top: 10px;padding-left: 10px;">
+                            <h3 id="amount-front">3</h3>
+                        </div>
+                        <div class="price" style="margin: 0;padding-top: 5px;">
+                            <pre style="padding: 0;margin: 0;">₺</pre>
+                            <p id="front-price">245</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="coin-line">
+                    <div class="coin-title">
+                        <div class="coin-image">
+                            <img src="https://cryptologos.cc/logos/siacoin-sc-logo.png">
+                        </div>
+                        <div class="coin-name">
+                            <h4>SC</h4>
+                        </div>
+                    </div>
+                    <div style="padding-right: 10px;">
+                        <div class="amount" style="text-align: end;float:float-right;margin: 0;padding-top: 10px;padding-left: 10px;">
+                            <h3 id="amount-sc">350</h3>
+                        </div>
+                        <div class="price" style="margin: 0;padding-top: 5px;">
+                            <pre style="padding: 0;margin: 0;">₺</pre>
+                            <p id="sc-price">245</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="coin-line">
+                    <div class="coin-title">
+                        <div class="coin-image">
+                            <img src="https://cdn4.iconfinder.com/data/icons/crypto-currency-and-coin-2/256/cardano_ada-512.png">
+                        </div>
+                        <div class="coin-name">
+                            <h4>ADA</h4>
+                        </div>
+                    </div>
+                    <div style="padding-right: 10px;">
+                        <div class="amount" style="text-align: end;float:float-right;margin: 0;padding-top: 10px;padding-left: 10px;">
+                            <h3 id="amount-ada">8</h3>
+                        </div>
+                        <div class="price" style="margin: 0;padding-top: 5px;">
+                            <pre style="padding: 0;margin: 0;">₺</pre>
+                            <p id="ada-price">245</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="coin-line">
+                    <div class="coin-title">
+                        <div class="coin-image">
+                            <img src="https://s2.coinmarketcap.com/static/img/coins/200x200/4279.png">
+                        </div>
+                        <div class="coin-name">
+                            <h4>SXP</h4>
+                        </div>
+                    </div>
+                    <div style="padding-right: 10px;">
+                        <div class="amount" style="text-align: end;float:float-right;margin: 0;padding-top: 10px;padding-left: 10px;">
+                            <h3 id="amount-sxp">1.8</h3>
+                        </div>
+                        <div class="price" style="margin: 0;padding-top: 5px;">
+                            <pre style="padding: 0;margin: 0;">₺</pre>
+                            <p id="sxp-price">245</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="coin-line">
+                    <div class="coin-title">
+                        <div class="coin-image">
+                            <img src="https://icodrops.com/wp-content/uploads/2018/06/yT_5Hap9_400x400.png">
+                        </div>
+                        <div class="coin-name">
+                            <h4>MATIC</h4>
+                        </div>
+                    </div>
+                    <div style="padding-right: 10px;">
+                        <div class="amount" style="text-align: end;float:float-right;margin: 0;padding-top: 10px;padding-left: 10px;">
+                            <h3 id="amount-matic">26</h3>
+                        </div>
+                        <div class="price" style="margin: 0;padding-top: 5px;">
+                            <pre style="padding: 0;margin: 0;">₺</pre>
+                            <p id="matic-price">245</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="coin-line">
+                    <div class="coin-title">
+                        <div class="coin-image">
+                            <img src="https://seeklogo.com/images/A/appcoins-appc-logo-D55612EEE6-seeklogo.com.png">
+                        </div>
+                        <div class="coin-name">
+                            <h4>APPC</h4>
+                        </div>
+                    </div>
+                    <div style="padding-right: 10px;">
+                        <div class="amount" style="text-align: end;float:float-right;margin: 0;padding-top: 10px;padding-left: 10px;">
+                            <h3 id="amount-appc">33</h3>
+                        </div>
+                        <div class="price" style="margin: 0;padding-top: 5px;">
+                            <pre style="padding: 0;margin: 0;">₺</pre>
+                            <p id="appc-price">245</p>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="coin-line">
-                <div class="coin-title">
-                    <div class="coin-image">
-                        <img src="https://cryptologos.cc/logos/loom-network-loom-logo.png">
-                    </div>
-                    <div class="coin-name">
-                        <h4>LOOM</h4>
-                    </div>
-                </div>
-                <div style="padding-right: 10px;">
-                    <div class="amount" style="text-align: end;float:float-right;margin: 0;padding-top: 10px;padding-left: 10px;">
-                        <h3 id="amount-loom">97</h3>
-                    </div>
-                    <div class="price" style="margin: 0;padding-top: 5px;">
-                        <pre style="padding: 0;margin: 0;">₺</pre>
-                        <p id="loom-price">97</p>
-                    </div>
-                </div>
-            </div>
-            <div class="coin-line">
-                <div class="coin-title">
-                    <div class="coin-image">
-                        <img src="https://cryptologos.cc/logos/pundi-x-npxs-logo.png">
-                    </div>
-                    <div class="coin-name">
-                        <h4>NPXS</h4>
-                    </div>
-                </div>
-                <div style="padding-right: 10px;">
-                    <div class="amount" style="text-align: end;float:float-right;margin: 0;padding-top: 10px;padding-left: 10px;">
-                        <h3 id="amount-npxs">3</h3>
-                    </div>
-                    <div class="price" style="margin: 0;padding-top: 5px;">
-                        <pre style="padding: 0;margin: 0;">₺</pre>
-                        <p id="npxs-price">245</p>
-                    </div>
-                </div>
-            </div>
-            <div class="coin-line">
-                <div class="coin-title">
-                    <div class="coin-image">
-                        <img src="https://cryptologos.cc/logos/bittorrent-btt-logo.png">
-                    </div>
-                    <div class="coin-name">
-                        <h4>BTT</h4>
-                    </div>
-                </div>
-                <div style="padding-right: 10px;">
-                    <div class="amount" style="text-align: end;float:float-right;margin: 0;padding-top: 10px;padding-left: 10px;">
-                        <h3 id="amount-btt">9825</h3>
-                    </div>
-                    <div class="price" style="margin: 0;padding-top: 5px;">
-                        <pre style="padding: 0;margin: 0;">₺</pre>
-                        <p id="btt-price">245</p>
-                    </div>
-                </div>
-            </div>
-            <div class="coin-line">
-                <div class="coin-title">
-                    <div class="coin-image">
-                        <img src="https://s2.coinmarketcap.com/static/img/coins/200x200/5893.png">
-                    </div>
-                    <div class="coin-name">
-                        <h4>FRONT</h4>
-                    </div>
-                </div>
-                <div style="padding-right: 10px;">
-                    <div class="amount" style="text-align: end;float:float-right;margin: 0;padding-top: 10px;padding-left: 10px;">
-                        <h3 id="amount-front">3</h3>
-                    </div>
-                    <div class="price" style="margin: 0;padding-top: 5px;">
-                        <pre style="padding: 0;margin: 0;">₺</pre>
-                        <p id="front-price">245</p>
-                    </div>
-                </div>
-            </div>
-            <div class="coin-line">
-                <div class="coin-title">
-                    <div class="coin-image">
-                        <img src="https://cryptologos.cc/logos/siacoin-sc-logo.png">
-                    </div>
-                    <div class="coin-name">
-                        <h4>SC</h4>
-                    </div>
-                </div>
-                <div style="padding-right: 10px;">
-                    <div class="amount" style="text-align: end;float:float-right;margin: 0;padding-top: 10px;padding-left: 10px;">
-                        <h3 id="amount-sc">350</h3>
-                    </div>
-                    <div class="price" style="margin: 0;padding-top: 5px;">
-                        <pre style="padding: 0;margin: 0;">₺</pre>
-                        <p id="sc-price">245</p>
-                    </div>
-                </div>
-            </div>
-            <div class="coin-line">
-                <div class="coin-title">
-                    <div class="coin-image">
-                        <img src="https://cdn4.iconfinder.com/data/icons/crypto-currency-and-coin-2/256/cardano_ada-512.png">
-                    </div>
-                    <div class="coin-name">
-                        <h4>ADA</h4>
-                    </div>
-                </div>
-                <div style="padding-right: 10px;">
-                    <div class="amount" style="text-align: end;float:float-right;margin: 0;padding-top: 10px;padding-left: 10px;">
-                        <h3 id="amount-ada">8</h3>
-                    </div>
-                    <div class="price" style="margin: 0;padding-top: 5px;">
-                        <pre style="padding: 0;margin: 0;">₺</pre>
-                        <p id="ada-price">245</p>
-                    </div>
-                </div>
-            </div>
-            <div class="coin-line">
-                <div class="coin-title">
-                    <div class="coin-image">
-                        <img src="https://s2.coinmarketcap.com/static/img/coins/200x200/4279.png">
-                    </div>
-                    <div class="coin-name">
-                        <h4>SXP</h4>
-                    </div>
-                </div>
-                <div style="padding-right: 10px;">
-                    <div class="amount" style="text-align: end;float:float-right;margin: 0;padding-top: 10px;padding-left: 10px;">
-                        <h3 id="amount-sxp">1.8</h3>
-                    </div>
-                    <div class="price" style="margin: 0;padding-top: 5px;">
-                        <pre style="padding: 0;margin: 0;">₺</pre>
-                        <p id="sxp-price">245</p>
-                    </div>
-                </div>
-            </div>
-            <div class="coin-line">
-                <div class="coin-title">
-                    <div class="coin-image">
-                        <img src="https://icodrops.com/wp-content/uploads/2018/06/yT_5Hap9_400x400.png">
-                    </div>
-                    <div class="coin-name">
-                        <h4>MATIC</h4>
-                    </div>
-                </div>
-                <div style="padding-right: 10px;">
-                    <div class="amount" style="text-align: end;float:float-right;margin: 0;padding-top: 10px;padding-left: 10px;">
-                        <h3 id="amount-matic">26</h3>
-                    </div>
-                    <div class="price" style="margin: 0;padding-top: 5px;">
-                        <pre style="padding: 0;margin: 0;">₺</pre>
-                        <p id="matic-price">245</p>
-                    </div>
-                </div>
-            </div>
-            <div class="coin-line">
-                <div class="coin-title">
-                    <div class="coin-image">
-                        <img src="https://seeklogo.com/images/A/appcoins-appc-logo-D55612EEE6-seeklogo.com.png">
-                    </div>
-                    <div class="coin-name">
-                        <h4>APPC</h4>
-                    </div>
-                </div>
-                <div style="padding-right: 10px;">
-                    <div class="amount" style="text-align: end;float:float-right;margin: 0;padding-top: 10px;padding-left: 10px;">
-                        <h3 id="amount-appc">33</h3>
-                    </div>
-                    <div class="price" style="margin: 0;padding-top: 5px;">
-                        <pre style="padding: 0;margin: 0;">₺</pre>
-                        <p id="appc-price">245</p>
-                    </div>
-                </div>
+            <br>
+            <div class="coins">
+                <div class="coinmarketcap-currency-widget" data-currencyid="4066" data-base="TRY" data-secondary="" data-ticker="true" data-rank="true" data-marketcap="true" data-volume="true" data-statsticker="true" data-stats="USD"></div>
+                <div class="coinmarketcap-currency-widget" data-currencyid="3718" data-base="TRY" data-secondary="" data-ticker="true" data-rank="true" data-marketcap="true" data-volume="true" data-statsticker="true" data-stats="USD"></div>
+                <div class="coinmarketcap-currency-widget" data-currencyid="2588" data-base="TRY" data-secondary="" data-ticker="true" data-rank="true" data-marketcap="true" data-volume="true" data-statsticker="true" data-stats="USD"></div>
+                <div class="coinmarketcap-currency-widget" data-currencyid="2603" data-base="TRY" data-secondary="" data-ticker="true" data-rank="true" data-marketcap="true" data-volume="true" data-statsticker="true" data-stats="USD"></div>
+                <div class="coinmarketcap-currency-widget" data-currencyid="1042" data-base="TRY" data-secondary="" data-ticker="true" data-rank="true" data-marketcap="true" data-volume="true" data-statsticker="true" data-stats="USD"></div>
+                <div class="coinmarketcap-currency-widget" data-currencyid="2010" data-base="TRY" data-secondary="" data-ticker="true" data-rank="true" data-marketcap="true" data-volume="true" data-statsticker="true" data-stats="USD"></div>
+                <div class="coinmarketcap-currency-widget" data-currencyid="4279" data-base="TRY" data-secondary="" data-ticker="true" data-rank="true" data-marketcap="true" data-volume="true" data-statsticker="true" data-stats="USD"></div>
+                <div class="coinmarketcap-currency-widget" data-currencyid="5893" data-base="TRY" data-secondary="" data-ticker="true" data-rank="true" data-marketcap="true" data-volume="true" data-statsticker="true" data-stats="USD"></div>
+                <div class="coinmarketcap-currency-widget" data-currencyid="3890" data-base="TRY" data-secondary="" data-ticker="true" data-rank="true" data-marketcap="true" data-volume="true" data-statsticker="true" data-stats="USD"></div>
+                <div class="coinmarketcap-currency-widget" data-currencyid="2344" data-base="TRY" data-secondary="" data-ticker="true" data-rank="true" data-marketcap="true" data-volume="true" data-statsticker="true" data-stats="USD"></div>
             </div>
         </div>
-        <br>
-        <div class="coins">
-            <div class="coinmarketcap-currency-widget" data-currencyid="4066" data-base="TRY" data-secondary="" data-ticker="true" data-rank="true" data-marketcap="true" data-volume="true" data-statsticker="true" data-stats="USD"></div>
-            <div class="coinmarketcap-currency-widget" data-currencyid="3718" data-base="TRY" data-secondary="" data-ticker="true" data-rank="true" data-marketcap="true" data-volume="true" data-statsticker="true" data-stats="USD"></div>
-            <div class="coinmarketcap-currency-widget" data-currencyid="2588" data-base="TRY" data-secondary="" data-ticker="true" data-rank="true" data-marketcap="true" data-volume="true" data-statsticker="true" data-stats="USD"></div>
-            <div class="coinmarketcap-currency-widget" data-currencyid="2603" data-base="TRY" data-secondary="" data-ticker="true" data-rank="true" data-marketcap="true" data-volume="true" data-statsticker="true" data-stats="USD"></div>
-            <div class="coinmarketcap-currency-widget" data-currencyid="1042" data-base="TRY" data-secondary="" data-ticker="true" data-rank="true" data-marketcap="true" data-volume="true" data-statsticker="true" data-stats="USD"></div>
-            <div class="coinmarketcap-currency-widget" data-currencyid="2010" data-base="TRY" data-secondary="" data-ticker="true" data-rank="true" data-marketcap="true" data-volume="true" data-statsticker="true" data-stats="USD"></div>
-            <div class="coinmarketcap-currency-widget" data-currencyid="4279" data-base="TRY" data-secondary="" data-ticker="true" data-rank="true" data-marketcap="true" data-volume="true" data-statsticker="true" data-stats="USD"></div>
-            <div class="coinmarketcap-currency-widget" data-currencyid="5893" data-base="TRY" data-secondary="" data-ticker="true" data-rank="true" data-marketcap="true" data-volume="true" data-statsticker="true" data-stats="USD"></div>
-            <div class="coinmarketcap-currency-widget" data-currencyid="3890" data-base="TRY" data-secondary="" data-ticker="true" data-rank="true" data-marketcap="true" data-volume="true" data-statsticker="true" data-stats="USD"></div>
-            <div class="coinmarketcap-currency-widget" data-currencyid="2344" data-base="TRY" data-secondary="" data-ticker="true" data-rank="true" data-marketcap="true" data-volume="true" data-statsticker="true" data-stats="USD"></div>
-        </div>
-    </div>
-    <script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/currency.js"></script>
+    </body>
     <script>
         var url = "https://api.coingecko.com/api/v3/simple/price?ids=appcoins%2Cchiliz%2Cmatic-network%2Csiacoin%2Cmatic%2Cpundi-x-2%2Cloom-network%2Cbittorrent-2%2Cswipe%2Cfrontier-token%2Ccardano&vs_currencies=try"
         var xmlhttp = new XMLHttpRequest();
@@ -308,6 +355,17 @@
         var sxp = 0.01
         var matic = 0.01
         var appc = 0.01
+
+        var chz_price = 3
+        var loom_price = 1
+        var btt_price = 0.01
+        var npxs_price = 0.01
+        var front_price = 0.01
+        var sc_price = 0.01
+        var ada_price = 0.01
+        var sxp_price = 0.01
+        var matic_price = 0.01
+        var appc_price = 0.01
 
         var amount_chz = document.getElementById("amount-chz").innerText
         var amount_loom = document.getElementById("amount-loom").innerText
@@ -338,16 +396,18 @@
             } catch (err) {
                 console.log(err)
             }
-            var chz_price = chz * amount_chz
-            var loom_price = loom * amount_loom
-            var btt_price = btt * amount_btt
-            var npxs_price = npxs * amount_npxs
-            var front_price = front * amount_front
-            var sc_price = sc * amount_sc
-            var ada_price = ada * amount_ada
-            var sxp_price = sxp * amount_sxp
-            var matic_price = matic * amount_matic
-            var appc_price = appc * amount_appc
+            chz_price = chz * amount_chz
+            loom_price = loom * amount_loom
+            btt_price = btt * amount_btt
+            npxs_price = npxs * amount_npxs
+            front_price = front * amount_front
+            sc_price = sc * amount_sc
+            ada_price = ada * amount_ada
+            sxp_price = sxp * amount_sxp
+            matic_price = matic * amount_matic
+            appc_price = appc * amount_appc
+
+            total = appc_price + matic_price + sxp_price + ada_price + sc_price + front_price + npxs_price + btt_price + loom_price + chz_price
 
             document.getElementById("chz-price").innerHTML = chz_price.toFixed(2);
             document.getElementById("loom-price").innerHTML = loom_price.toFixed(2);
@@ -359,11 +419,60 @@
             document.getElementById("sxp-price").innerHTML = sxp_price.toFixed(2);
             document.getElementById("matic-price").innerHTML = matic_price.toFixed(2);
             document.getElementById("appc-price").innerHTML = appc_price.toFixed(2);
+            document.getElementById("subTotal").innerHTML = total.toFixed(2);
         }
 
         xmlhttp.open("GET", url, true);
         xmlhttp.send();
+
+
+        google.load("visualization", "1", {
+            packages: ["corechart"]
+        });
+        google.setOnLoadCallback(drawCharts);
+        console.log(chz_price)
+
+        function drawCharts() {
+            console.log(chz_price)
+            var pieData = google.visualization.arrayToDataTable([
+                ['Coins', 'Values'],
+                ['chiliz', chz_price],
+                ['loom', loom_price],
+                ['npxs', npxs_price],
+                ['btt', btt_price],
+                ['front', front_price],
+                ['sc', sc_price],
+                ['ada', ada_price],
+                ['sxp', sxp_price],
+                ['matic', matic_price],
+                ['appc', appc_price]
+            ]);
+            // pie chart options
+            var pieOptions = {
+                backgroundColor: '#FAFAFA',
+                pieHole: 0.4,
+                colors: ["cornflowerblue",
+                    "olivedrab",
+                    "orange",
+                    "tomato",
+                    "crimson",
+                    "purple",
+                    "turquoise",
+                    "forestgreen",
+                    "navy",
+                    "gray"
+                ],
+                pieSliceText: 'none',
+                chartArea: {
+                    width: '100%',
+                    height: '96%'
+                },
+            }
+
+            // draw pie chart
+            var pieChart = new google.visualization.PieChart(document.getElementById('pie-chart'));
+            pieChart.draw(pieData, pieOptions);
+        }
     </script>
-</body>
 
 </html>
