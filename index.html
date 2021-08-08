@@ -290,25 +290,6 @@
                 <div class="coin-line">
                     <div class="coin-title">
                         <div class="coin-image">
-                            <img src="https://icodrops.com/wp-content/uploads/2018/06/yT_5Hap9_400x400.png">
-                        </div>
-                        <div class="coin-name">
-                            <h4>MATIC</h4>
-                        </div>
-                    </div>
-                    <div style="padding-right: 10px;">
-                        <div class="amount" style="text-align: end;float:float-right;margin: 0;padding-top: 10px;padding-left: 10px;">
-                            <h3 id="amount-matic">26</h3>
-                        </div>
-                        <div class="price" style="margin: 0;padding-top: 5px;">
-                            <pre style="padding: 0;margin: 0;">₺</pre>
-                            <p id="matic-price">245</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="coin-line">
-                    <div class="coin-title">
-                        <div class="coin-image">
                             <img src="https://seeklogo.com/images/A/appcoins-appc-logo-D55612EEE6-seeklogo.com.png">
                         </div>
                         <div class="coin-name">
@@ -407,7 +388,7 @@
             matic_price = matic * amount_matic
             appc_price = appc * amount_appc
 
-            total = appc_price + matic_price + sxp_price + ada_price + sc_price + front_price + btt_price + loom_price + chz_price
+            total = appc_price  + sxp_price + ada_price + sc_price + front_price + btt_price + loom_price + chz_price
 
             document.getElementById("chz-price").innerHTML = chz_price.toFixed(2);
             document.getElementById("loom-price").innerHTML = loom_price.toFixed(2);
