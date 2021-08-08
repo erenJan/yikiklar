@@ -323,7 +323,7 @@
         </div>
     </body>
     <script>
-        var url = "https://api.coingecko.com/api/v3/simple/price?ids=appcoins%2Cchiliz%2Cmatic-network%2Csiacoin%2Cmatic%2Cpundi-x-2%2Cloom-network%2Cbittorrent-2%2Cswipe%2Cfrontier-token%2Ccardano&vs_currencies=try"
+        var url = "https://api.coingecko.com/api/v3/simple/price?ids=appcoins%2Cchiliz%2Cpundi-x-2%2Cloom-network%2Cbittorrent-2%2Cswipe%2Cfrontier-token%2Ccardano&vs_currencies=try"
         var xmlhttp = new XMLHttpRequest();
 
         var chz = 3
@@ -368,9 +368,8 @@
                 sc = myArr["siacoin"]["try"]
                 ada = myArr["cardano"]["try"]
                 sxp = myArr["swipe"]["try"]
-                matic = myArr["matic-network"]["try"]
                 appc = myArr["appcoins"]["try"]
-                console.log(front, sc, ada, sxp, matic, appc)
+                console.log(front, sc, ada, sxp,  appc)
             } catch (err) {
                 console.log(err)
             }
@@ -395,7 +394,6 @@
             document.getElementById("sc-price").innerHTML = sc_price.toFixed(2);
             document.getElementById("ada-price").innerHTML = ada_price.toFixed(2);
             document.getElementById("sxp-price").innerHTML = sxp_price.toFixed(2);
-            document.getElementById("matic-price").innerHTML = matic_price.toFixed(2);
             document.getElementById("appc-price").innerHTML = appc_price.toFixed(2);
             document.getElementById("subTotal").innerHTML = total.toFixed(2);
         }
@@ -422,7 +420,6 @@
                 ['sc', sc_price],
                 ['ada', ada_price],
                 ['sxp', sxp_price],
-                ['matic', matic_price],
                 ['appc', appc_price]
             ]);
             // pie chart options
